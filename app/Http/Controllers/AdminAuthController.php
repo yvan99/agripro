@@ -63,3 +63,4 @@ class AdminAuthController extends Controller
 
         return redirect()->intended('/admin/dashboard');
     }
+}
