@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Farmer;
 use Illuminate\Database\Seeder;
 
 class FarmerSeeder extends Seeder
@@ -13,6 +14,6 @@ class FarmerSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Farmer::factory()->count(10)->create();
     }
 }
