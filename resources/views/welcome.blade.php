@@ -267,5 +267,5 @@
                 <a href="about.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
             </div>
         </section><!--====== End Features Section ======-->
-
+        @include('components.footer')
 @include('components.homejs')
