@@ -50,7 +50,7 @@
                 <div class="col-xl-6 col-lg-12">
                     <!--=== Hero Image Box ===-->
                     <div class="hero-image-box d-xl-block d-none wow fadeInRight" data-wow-delay=".75s">
-                        <img src="{{asset('homepage/images/hero/hero-three_one.jpg')}}" alt="Hero Image">
+                        <img src="{{ asset('homepage/images/hero/woman.jpg') }}" alt="Hero Image">
                         <div class="shape hero-svg">
                             <svg width="237" height="569" viewBox="0 0 237 569" fill="none">
                                 <path
@@ -69,9 +69,12 @@
 <section class="features-section-two p-r z-1">
     <!--=== Features Wrapper ===-->
     <div class="features-wrapper-two main-bg wow fadeInDown">
-        <div class="shape shape-one"><span><img src="assets/images/shape/leaf-5.png" alt="Leaf"></span></div>
-        <div class="shape shape-two"><span><img src="assets/images/shape/leaf-5.png" alt="Leaf"></span></div>
-        <div class="shape shape-three"><span><img src="assets/images/shape/leaf-5.png" alt="Leaf"></span></div>
+        <div class="shape shape-one"><span><img src="{{ asset('homepage/images/shape/leaf-5.png') }}"
+                    alt="Leaf"></span></div>
+        <div class="shape shape-two"><span><img src="{{ asset('homepage/images/shape/leaf-5.png') }}"
+                    alt="Leaf"></span></div>
+        <div class="shape shape-three"><span><img src="{{ asset('homepage/images/shape/leaf-5.png') }}"
+                    alt="Leaf"></span></div>
         <div class="features-area pb-30">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-6">

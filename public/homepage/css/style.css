@@ -1763,7 +1763,7 @@ button {
 }
 .hero-wrapper-one .hero-image-box img {
   width: 100%;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 @media (max-width: 991px) {
