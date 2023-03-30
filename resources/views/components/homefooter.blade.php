@@ -5,11 +5,12 @@
                 <div class="col-lg-6">
                     <!--====== Copyright Text ======-->
                     <div class="copyright-text">
-                        <P>Copy &copy; {{date('Y')}} {{env("APP_OWNER")}}. All Rights Reserved.</P>
+                        <P>Copy &copy; {{ date('Y') }} {{ env('APP_OWNER') }}. All Rights Reserved.</P>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-</footer><!--====== End Footer ======-->
+</footer>
+<!--====== End Footer ======-->
