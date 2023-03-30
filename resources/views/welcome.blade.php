@@ -1,4 +1,4 @@
-
+@include('components.homecss')
         <header class="header-area header-one transparent-header">
             <div class="container-fluid">
                 <!--====== Header Top Bar ======-->
