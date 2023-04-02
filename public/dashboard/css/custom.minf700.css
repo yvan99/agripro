@@ -62,12 +62,12 @@ hr {
     opacity: 0.25;
 }
 ::-moz-selection {
-    background: #7016d0;
+    background: #0b3d2c;
     color: #fff;
     text-shadow: none;
 }
 ::selection {
-    background: #7016d0;
+    background: #0b3d2c;
     color: #fff;
     text-shadow: none;
 }
