@@ -38,8 +38,8 @@ Route::prefix('farmer')->group(function () {
     Route::post('/login', [FarmerLoginController::class, 'login'])->name('farmer.login.submit');
 
     // Farmer register route
-    Route::get('/register', [FarmerRegisterController::class, 'showRegistrationForm'])->name('farmer.register');
-    Route::post('/register', [FarmerRegisterController::class, 'register'])->name('farmer.register.submit');
+    Route::get('/register', [FarmerAuthController::class, 'showRegistrationForm'])->name('farmer.register');
+    Route::post('/register', [FarmerAuthController::class, 'register'])->name('farmer.register.submit');
 
     // Farmer logout route
     Route::post('/logout', [FarmerLoginController::class, 'logout'])->name('farmer.logout');
