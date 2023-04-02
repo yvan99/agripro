@@ -50,6 +50,8 @@ class FarmerAuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:farmers',
             'password' => 'required|string|min:8|confirmed',
         ]);
@@ -57,6 +59,8 @@ class FarmerAuthController extends Controller
         $farmer = \App\Models\Farmer::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
             'password' => Hash::make($request->password),
         ]);
 

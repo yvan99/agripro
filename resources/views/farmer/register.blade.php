@@ -3,10 +3,10 @@
 <body class="">
     <div class="wrapper">
         <section class="login-content overflow-hidden">
-            <div class="row no-gutters align-items-center bg-white">
+            <div class="row no-gutters align-items-center bg-primary">
                 <div class="col-md-12 col-lg-12 align-self-center">
                     <div class="row justify-content-center">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-5 mb-5">
                             <div class="card auth-card  d-flex justify-content-center mb-0">
                                 <div class="card-header">
                                     <h3>{{ __('Register as a Farmer') }}</h3>
@@ -126,10 +126,7 @@
                     </div>
                 </div>
             </div>
-    </div>
-    </div>
-    </div>
-    </div>
+ 
     </section>
     </div>
     @include('components.dashjs')
