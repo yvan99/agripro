@@ -1,4 +1,4 @@
-
+@include('components.dashcss')
 <body class="">
     <!-- loader Start -->
     <div id="loading">
