@@ -44,3 +44,5 @@ Route::prefix('farmer')->group(function () {
     // Farmer logout route
     Route::post('/logout', [FarmerLoginController::class, 'logout'])->name('farmer.logout');
 });
+
+
