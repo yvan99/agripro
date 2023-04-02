@@ -1,138 +1,135 @@
 @include('components.dashcss')
+
 <body class="">
-    <!-- loader Start -->
-    <div id="loading">
-        <div class="loader simple-loader">
-            <div class="loader-body ">
-                <img src="https://templates.iqonic.design/product/qompac-ui/html/dist/assets/images/loader.webp"
-                    alt="loader" class="image-loader img-fluid ">
-            </div>
-        </div>
-    </div>
-    <!-- loader END -->
     <div class="wrapper">
         <section class="login-content overflow-hidden">
             <div class="row no-gutters align-items-center bg-white">
-                <div class="col-md-12 col-lg-6 align-self-center">
+                <div class="col-md-12 col-lg-12 align-self-center">
                     <div class="row justify-content-center">
-                        <div class="col-md-12 col-lg-6 align-self-center">
-                            <a href="../index.html"
-                                class="navbar-brand d-flex align-items-center mb-3 justify-content-center text-primary">
-                                <div class="logo-normal">
-                                    <svg class="" viewBox="0 0 32 32" width="80px" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M7.25333 2H22.0444L29.7244 15.2103L22.0444 28.1333H7.25333L0 15.2103L7.25333 2ZM11.2356 9.32316H18.0622L21.3334 15.2103L18.0622 20.9539H11.2356L8.10669 15.2103L11.2356 9.32316Z"
-                                            fill="currentColor" />
-                                        <path d="M23.751 30L13.2266 15.2103H21.4755L31.9999 30H23.751Z"
-                                            fill="#3FF0B9" />
-                                    </svg>
-                                </div>
-                                <h2 class="logo-title ms-3 mb-0" data-setting="app_name">Qompac UI</h2>
-                            </a>
-                        </div>
-                        <div class="col-md-9">
+                        <div class="col-md-6">
                             <div class="card auth-card  d-flex justify-content-center mb-0">
+                                <div class="card-header">
+                                    <h3>{{ __('Register as a Farmer') }}</h3>
+                                </div>
+
                                 <div class="card-body">
-                                    <h2 class="mb-2 text-center">Sign Up</h2>
-                                    <p class="text-center">Create your Qompac UI account.</p>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="full-name" class="form-label">Full Name</label>
-                                                    <input type="text" class="form-control" id="full-name"
-                                                        placeholder="John">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="last-name" class="form-label">Last Name</label>
-                                                    <input type="text" class="form-control" id="last-name"
-                                                        placeholder="Doe">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="email" class="form-label">Email</label>
-                                                    <input type="email" class="form-control" id="email"
-                                                        placeholder="xyz@example.com">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="phone" class="form-label">Phone No.</label>
-                                                    <input type="text" class="form-control" id="phone"
-                                                        placeholder="123456789">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="password" class="form-label">Password</label>
-                                                    <input type="password" class="form-control" id="password"
-                                                        placeholder=" ">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="confirm-password" class="form-label">Confirm
-                                                        Password</label>
-                                                    <input type="text" class="form-control" id="confirm-password"
-                                                        placeholder=" ">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 d-flex justify-content-center">
-                                                <div class="form-check mb-3">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="customCheck1">
-                                                    <label class="form-check-label" for="customCheck1">I agree with
-                                                        the terms of use</label>
-                                                </div>
+                                    <form method="POST" action="{{ route('farmer.register.submit') }}">
+                                        @csrf
+
+                                        <div class="form-group row">
+                                            <label for="name"
+                                                class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="name" type="text"
+                                                    class="form-control @error('name') is-invalid @enderror"
+                                                    name="name" value="{{ old('name') }}" autocomplete="name"
+                                                    autofocus>
+
+                                                @error('name')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                         </div>
-                                        <div class="d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-primary">Sign Up</button>
+
+                                        <div class="form-group row">
+                                            <label for="phone"
+                                                class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="phone" type="text"
+                                                    class="form-control @error('phone') is-invalid @enderror"
+                                                    name="phone" value="{{ old('phone') }}" autocomplete="phone">
+
+                                                @error('phone')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                         </div>
-                                        <p class="text-center my-3">or sign in with other accounts?</p>
-                                        <div class="d-flex justify-content-center">
-                                            <ul class="list-group list-group-horizontal list-group-flush">
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="https://templates.iqonic.design/product/qompac-ui/html/dist/assets/images/brands/gm.svg"
-                                                            alt="gm" loading="lazy"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="https://templates.iqonic.design/product/qompac-ui/html/dist/assets/images/brands/fb.svg"
-                                                            alt="fb" loading="lazy"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="https://templates.iqonic.design/product/qompac-ui/html/dist/assets/images/brands/im.svg"
-                                                            alt="im" loading="lazy"></a>
-                                                </li>
-                                                <li class="list-group-item border-0 pb-0">
-                                                    <a href="#"><img
-                                                            src="https://templates.iqonic.design/product/qompac-ui/html/dist/assets/images/brands/li.svg"
-                                                            alt="li" loading="lazy"></a>
-                                                </li>
-                                            </ul>
+
+                                        <div class="form-group row">
+                                            <label for="address"
+                                                class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="address" type="text"
+                                                    class="form-control @error('address') is-invalid @enderror"
+                                                    name="address" value="{{ old('address') }}" autocomplete="address">
+
+                                                @error('address')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                         </div>
-                                        <p class="mt-3 text-center">
-                                            Already have an Account <a href="sign-in.html" class="text-underline">Sign
-                                                In</a>
-                                        </p>
+
+                                        <div class="form-group row">
+                                            <label for="email"
+                                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="email" type="email"
+                                                    class="form-control @error('email') is-invalid @enderror"
+                                                    name="email" value="{{ old('email') }}" autocomplete="email">
+
+                                                @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="password"
+                                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="password" type="password"
+                                                    class="form-control @error('password') is-invalid @enderror"
+                                                    name="password" autocomplete="new-password">
+
+                                                @error('password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="password-confirm"
+                                                class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                                            <div class="col-md-6">
+                                                <input id="password-confirm" type="password" class="form-control"
+                                                    name="password_confirmation" autocomplete="new-password">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    {{ __('Register') }}
+                                                </button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 d-lg-block d-none bg-primary p-0  overflow-hidden">
-                    <img src="../../assets/images/auth/01.png" class="img-fluid gradient-main" alt="images"
-                        loading="lazy">
-                </div>
             </div>
-        </section>
     </div>
-   @include('components.dashjs')
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    @include('components.dashjs')
