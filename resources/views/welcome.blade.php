@@ -42,7 +42,7 @@
                         <p class="wow fadeInDown" data-wow-delay=".6s">We Provide Beautiful Gardening & Landscaping
                         </p>
                         <div class="hero-button mb-30 wow fadeInUp" data-wow-delay=".7s">
-                            <a href="about.html" class="main-btn golden-btn mb-10">Explore More</a>
+                            <a href="/farmer/register" class="main-btn golden-btn mb-10">Farmer Account</a>
                             <a href="index.html" class="main-btn filled-btn mb-10">How It Work</a>
                         </div>
                     </div>
