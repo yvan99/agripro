@@ -29,8 +29,14 @@ Route::prefix('farmer')->group(function () {
     Route::get('/logout', [FarmerAuthController::class, 'logout'])->name('farmer.logout');
 });
 
+// FARMER PROTECTED ROUTES
 Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
     Route::view('/dashboard','farmer.dashboard');
+});
+
+// ADMIN PROTECTED ROUTES
+Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
+    Route::view('/dashboard','admin.dashboard');
 });
 
 
