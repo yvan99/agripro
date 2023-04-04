@@ -40,7 +40,6 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::view('/dashboard', 'admin.dashboard');
 
     // SEASONS
-    Route::get('/seasons/create', [SeasonController::class, 'create']);
     Route::post('/seasons', [SeasonController::class, 'store']);
     Route::get('/seasons', [SeasonController::class, 'index']);
 });

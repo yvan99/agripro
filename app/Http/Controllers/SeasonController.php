@@ -14,10 +14,6 @@ class SeasonController extends Controller
         return view('seasons.index', compact('seasons'));
     }
 
-    public function create()
-    {
-        return view('seasons.create');
-    }
 
     public function store(Request $request)
     {
