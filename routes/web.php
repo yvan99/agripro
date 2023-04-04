@@ -29,4 +29,8 @@ Route::prefix('farmer')->group(function () {
     Route::post('/logout', [FarmerAuthController::class, 'logout'])->name('farmer.logout');
 });
 
+Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
+    Route::view('/dashboard','farmer.dashboard');
+});
+
 
