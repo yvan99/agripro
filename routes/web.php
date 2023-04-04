@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\FarmerAuthController;
+use App\Http\Controllers\SeasonController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,12 +32,15 @@ Route::prefix('farmer')->group(function () {
 
 // FARMER PROTECTED ROUTES
 Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
-    Route::view('/dashboard','farmer.dashboard');
+    Route::view('/dashboard', 'farmer.dashboard');
 });
 
 // ADMIN PROTECTED ROUTES
 Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
-    Route::view('/dashboard','admin.dashboard');
+    Route::view('/dashboard', 'admin.dashboard');
+
+    // SEASONS
+    Route::get('/seasons/create', [SeasonController::class, 'create']);
+    Route::post('/seasons', [SeasonController::class, 'store']);
+    Route::get('/seasons', [SeasonController::class, 'index']);
 });
-
-
