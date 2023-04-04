@@ -1,7 +1,7 @@
-<aside class="sidebar sidebar-base sidebar-white sidebar-default navs-rounded-all " id="first-tour"
+<aside class="sidebar sidebar-base sidebar-dark sidebar-dark navs-rounded-all " id="first-tour"
     data-toggle="main-sidebar" data-sidebar="responsive">
     <div class="sidebar-header d-flex align-items-center justify-content-start">
-        <a href="index.html" class="navbar-brand">
+        <a href="/farmer/dashboard" class="navbar-brand">
 
             <!--Logo start-->
             <div class="logo-main">
