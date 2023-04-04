@@ -266,13 +266,13 @@
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-setting">
-                        <li><a class="dropdown-item" href="app/user-profile.html">Profile</a></li>
+                        {{-- <li><a class="dropdown-item" href="app/user-profile.html">Profile</a></li>
                         <li><a class="dropdown-item" href="app/user-privacy-setting.html">Privacy
                                 Setting</a></li>
                         <li>
                             <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="auth/sign-in.html">Logout</a></li>
+                        </li> --}}
+                        <li><a class="dropdown-item" href="/{{ Auth::getDefaultDriver() }}/logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
