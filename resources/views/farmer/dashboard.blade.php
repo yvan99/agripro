@@ -9,8 +9,8 @@
     <div class="content-inner container-fluid pb-0" id="page_layout">
         <div class="d-flex justify-content-between align-items-center flex-wrap mb-5 gap-3">
             <div class="d-flex flex-column">
-                <h3>Quick Insights</h3>
-                <p class="mb-0">Financial Dashboard</p>
+                <h3>Hello , {{ Auth::user()->name }}</h3>
+                <p class="mb-0">Analytics Dashboard</p>
             </div>
 
         </div>
