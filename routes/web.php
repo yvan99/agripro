@@ -10,15 +10,10 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     // Admin login route
-    Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
-    Route::post('/login', [AdminLoginController::class, 'login'])->name('admin.login.submit');
-
-    // Admin register route
-    Route::get('/register', [AdminRegisterController::class, 'showRegistrationForm'])->name('admin.register');
-    Route::post('/register', [AdminRegisterController::class, 'register'])->name('admin.register.submit');
-
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
     // Admin logout route
-    Route::post('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
 
 Route::prefix('farmer')->group(function () {
