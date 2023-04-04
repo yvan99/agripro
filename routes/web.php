@@ -13,7 +13,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login.submit');
     // Admin logout route
-    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+    Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
 
 Route::prefix('farmer')->group(function () {
@@ -26,7 +26,7 @@ Route::prefix('farmer')->group(function () {
     Route::post('/register', [FarmerAuthController::class, 'register'])->name('farmer.register.submit');
 
     // Farmer logout route
-    Route::post('/logout', [FarmerAuthController::class, 'logout'])->name('farmer.logout');
+    Route::get('/logout', [FarmerAuthController::class, 'logout'])->name('farmer.logout');
 });
 
 Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
