@@ -15,6 +15,17 @@ class CreateCropsTable extends Migration
     {
         Schema::create('crops', function (Blueprint $table) {
             $table->id();
+            $table->string('crop_type');
+            $table->unsignedBigInteger('farmer_id');
+            $table->foreign('farmer_id')->references('id')->on('farmers');
+            $table->unsignedBigInteger('season_id');
+            $table->foreign('season_id')->references('id')->on('seasons');
+            $table->double('area');
+            $table->date('planting_date');
+            $table->string('seed_type');
+            $table->double('fertilizer_amount');
+            $table->string('pesticide_type');
+            $table->double('yield');
             $table->timestamps();
         });
     }
