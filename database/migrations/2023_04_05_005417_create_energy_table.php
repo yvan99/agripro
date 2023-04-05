@@ -15,7 +15,16 @@ class CreateEnergyTable extends Migration
     {
         Schema::create('energy', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('farmer_id');
+            $table->unsignedBigInteger('season_id');
+            $table->unsignedBigInteger('crop_id');
+            $table->string('energy_type');
+            $table->float('cost');
             $table->timestamps();
+
+            $table->foreign('farmer_id')->references('id')->on('farmers')->onDelete('cascade');
+            $table->foreign('season_id')->references('id')->on('seasons')->onDelete('cascade');
+            $table->foreign('crop_id')->references('id')->on('crops')->onDelete('cascade');
         });
     }
 
