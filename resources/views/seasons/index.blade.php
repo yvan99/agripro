@@ -51,7 +51,21 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <!-- Add your form here -->
+                                            <form method="POST" action="{{ url('/seasons') }}">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <label for="year">Year</label>
+                                                    <input type="number" class="form-control" id="year"
+                                                        name="year" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Name</label>
+                                                    <input type="text" class="form-control" id="name"
+                                                        name="name" required>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
