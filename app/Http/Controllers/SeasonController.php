@@ -24,6 +24,6 @@ class SeasonController extends Controller
 
         Season::create($request->all());
 
-        return redirect()->route('seasons.index')->with('success', 'Season created successfully.');
+        return redirect()->back()->with('success', 'Season created successfully.');
     }
 }

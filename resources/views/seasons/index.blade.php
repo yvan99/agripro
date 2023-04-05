@@ -13,7 +13,11 @@
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
                             <h4 class="card-title">Crops seasons List</h4>
+
                         </div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createSeasonModal">
+                            Create Season
+                          </button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive border rounded">
@@ -45,13 +49,10 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="createSeasonModalLabel">Create Season</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="{{ url('/seasons') }}">
+                                            <form method="POST" action="{{ url('/admin/seasons') }}">
                                                 @csrf
                                                 <div class="form-group">
                                                     <label for="year">Year</label>
