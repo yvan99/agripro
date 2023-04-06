@@ -25,6 +25,7 @@ class EnergyController extends Controller
             'season_id' => 'required',
             'energy_type' => 'required',
             'cost' => 'required|numeric',
+            'amount' => 'required|numeric',
         ]);
 
         $energy = new Energy();
@@ -32,7 +33,8 @@ class EnergyController extends Controller
         $energy->season_id = $request->season_id;
         $energy->energy_type = $request->energy_type;
         $energy->cost = $request->cost;
-        $energy->farmer_id = auth()->user()->farmer->id;
+        $energy->farmer_id = $request->farmer_id;
+        $energy->amount = $request->amount;
         $energy->save();
 
         return redirect()->route('energy.index');
