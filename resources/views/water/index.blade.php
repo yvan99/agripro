@@ -31,7 +31,7 @@
                                         <th>Irrigation Type</th>
                                         <th>Irrigation Frequency</th>
                                         <th>Cost</th>
-                                        <th>Timestamp</th>
+                                        <th>Registered date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -44,7 +44,7 @@
                                             <td>{{ $water->irrigation_type }}</td>
                                             <td>{{ $water->irrigation_frequency }}</td>
                                             <td>{{ $water->cost }}</td>
-                                            <td>{{ $water->timestamp }}</td>
+                                            <td>{{ $water->created_at }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
