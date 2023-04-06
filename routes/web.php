@@ -43,3 +43,10 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::post('/seasons', [SeasonController::class, 'store']);
     Route::get('/seasons', [SeasonController::class, 'index']);
 });
+
+// BOTH GUARDS ROUTES
+
+Route::group(['middleware' => ['auth:admin,farmer']], function () {
+    Route::get('/crops', [CropController::class, 'index'])->name('crops.index');
+    Route::post('/crops', [CropController::class, 'store'])->name('crops.store');
+});
