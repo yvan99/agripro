@@ -52,7 +52,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/farmer/dashboard">
+                    <a class="nav-link {{ Request::is('farmer/dashboard') ? 'active' : '' }}" aria-current="page" href="/farmer/dashboard">
                         <i class="icon" data-bs-toggle="tooltip" title="Dashboard" data-bs-placement="right">
                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="analytics-dashboard.html">
+                    <a class="nav-link {{ Request::is('farmer/crops') ? 'active' : '' }}" aria-current="page" href="/farmer/crops">
                         <i class="icon" data-bs-toggle="tooltip" title="Analytics" data-bs-placement="right">
                             <svg width="20" height="20" class="icon-20" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
