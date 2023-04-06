@@ -15,21 +15,21 @@
                             <h4 class="card-title">Crops List</h4>
 
                         </div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#addWaterModal">
-                            Register water usage
-                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEnergyModal">
+                            Declare Energy Usage
+                          </button>
+                          
                     </div>
                     <div class="card-body">
                         <div class="table-responsive border rounded">
                             <table id="datatable" class="table " data-toggle="data-table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Crop Type</th>
-                                        <th scope="col">Season Name</th>
-                                        <th scope="col">Energy Type</th>
-                                        <th scope="col">Cost</th>
+                                        <th>ID</th>
+                                        <th>Crop Type</th>
+                                        <th>Season Name</th>
+                                        <th>Energy Type</th>
+                                        <th>Cost</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,7 +51,7 @@
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="addEnergyModalLabel">Add Energy</h5>
+                                            <h5 class="modal-title" id="addEnergyModalLabel">Declare energy usage</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -90,7 +90,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Cancel</button>
-                                                <button type="submit" class="btn btn-primary">Add Energy</button>
+                                                <button type="submit" class="btn btn-primary">Save Data</button>
                                             </div>
                                         </form>
                                     </div>
