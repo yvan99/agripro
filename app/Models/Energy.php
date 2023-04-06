@@ -16,6 +16,7 @@ class Energy extends Model
         'crop_id',
         'energy_type',
         'cost',
+        'amount'
     ];
 
     public function farmer()

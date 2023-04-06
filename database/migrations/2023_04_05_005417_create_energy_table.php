@@ -20,6 +20,7 @@ class CreateEnergyTable extends Migration
             $table->unsignedBigInteger('crop_id');
             $table->string('energy_type');
             $table->float('cost');
+            $table->float('amount');
             $table->timestamps();
 
             $table->foreign('farmer_id')->references('id')->on('farmers')->onDelete('cascade');
