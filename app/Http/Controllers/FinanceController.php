@@ -10,7 +10,7 @@ class FinanceController extends Controller
 {
     public function index()
     {
-        $finances = Finance::with('farmer', 'season')->get();
+        $finances = Finance::with('season')->where('farmer_id', auth()->user()->id)->get();
         $seasons = Season::all();
         return view('finance.index', compact('finances', 'seasons'));
     }
