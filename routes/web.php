@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\CropController;
 use App\Http\Controllers\FarmerAuthController;
 use App\Http\Controllers\SeasonController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,8 @@ Route::prefix('farmer')->group(function () {
 // FARMER PROTECTED ROUTES
 Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
     Route::view('/dashboard', 'farmer.dashboard');
+    Route::get('/crops', [CropController::class, 'index'])->name('crops.index');
+    Route::post('/crops', [CropController::class, 'store'])->name('crops.store');
 });
 
 // ADMIN PROTECTED ROUTES
@@ -44,9 +47,3 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::get('/seasons', [SeasonController::class, 'index']);
 });
 
-// BOTH GUARDS ROUTES
-
-Route::group(['middleware' => ['auth:admin,farmer']], function () {
-    Route::get('/crops', [CropController::class, 'index'])->name('crops.index');
-    Route::post('/crops', [CropController::class, 'store'])->name('crops.store');
-});
