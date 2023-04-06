@@ -11,7 +11,7 @@ class CropController extends Controller
 {
     public function index()
     {
-        $crops = Crop::with('farmer', 'season')->get();
+        $crops = Crop::with('farmer', 'season')->where('farmer_id', auth()->user()->id)->get();
         $seasons = Season::all();
         return view('crops.index', compact('crops','seasons'));
     }
