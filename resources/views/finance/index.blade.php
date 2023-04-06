@@ -124,11 +124,7 @@
                                                     <input type="number" class="form-control" name="irrigation_cost"
                                                         required>
                                                 </div>
-                                                <div class="mb-3 col-6">
-                                                    <label for="net_profit" class="form-label">Net Profit</label>
-                                                    <input type="number" class="form-control" name="net_profit"
-                                                        required>
-                                                </div>
+                                    
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger"
                                                         data-bs-dismiss="modal">Close</button>
