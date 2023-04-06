@@ -89,14 +89,20 @@
                                                         name="farmer_id"
                                                         value="{{ auth()->guard('farmer')->user()->id }}">
                                                 </div>
+
                                                 <div class="mb-3">
-                                                    <label for="cost" class="form-label">Cost</label>
+                                                    <label for="cost" class="form-label">Energy Amout In watts</label>
+                                                    <input type="number" class="form-control" id="amount"
+                                                        name="amount">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="cost" class="form-label">Total Cost</label>
                                                     <input type="number" class="form-control" id="cost"
                                                         name="cost">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
+                                                <button type="button" class="btn btn-danger"
                                                     data-bs-dismiss="modal">Cancel</button>
                                                 <button type="submit" class="btn btn-primary">Save Data</button>
                                             </div>
