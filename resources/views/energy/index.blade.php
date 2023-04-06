@@ -31,6 +31,7 @@
                                         <th>Season Name</th>
                                         <th>Energy Type</th>
                                         <th>Cost</th>
+                                        <th>Declared At</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -41,6 +42,7 @@
                                             <td>{{ $energy->season->name }}</td>
                                             <td>{{ $energy->energy_type }}</td>
                                             <td>{{ $energy->cost }}</td>
+                                            <td>{{ $energy->created_at }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -91,7 +93,8 @@
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="cost" class="form-label">Energy Amout In watts</label>
+                                                    <label for="cost" class="form-label">Energy Amout In
+                                                        watts</label>
                                                     <input type="number" class="form-control" id="amount"
                                                         name="amount">
                                                 </div>
