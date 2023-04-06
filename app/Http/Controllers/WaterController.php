@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Crop;
 use App\Models\Season;
 use App\Models\Water;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class WaterController extends Controller
     {
         $waters = Water::all();
         $seasons = Season::all();
-        return view('water.index', compact('waters', 'seasons'));
+        $crops = Crop::all();
+        return view('water.index', compact('waters', 'seasons','crops'));
     }
 
     /**
