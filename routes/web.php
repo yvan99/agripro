@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\CropController;
 use App\Http\Controllers\FarmerAuthController;
 use App\Http\Controllers\SeasonController;
+use App\Http\Controllers\WaterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

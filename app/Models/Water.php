@@ -9,6 +9,8 @@ class Water extends Model
 {
     use HasFactory;
 
+    protected $table = 'water';
+
     protected $fillable = [
         'farmer_id',
         'season_id',
