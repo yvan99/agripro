@@ -80,8 +80,11 @@
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="season_id" class="form-label">Season ID</label>
-                                                    <input type="text" class="form-control" id="season_id"
-                                                        name="season_id" required>
+                                                    <select class="form-control form-select" id="season_id" name="season_id">
+                                                        @foreach($seasons as $season)
+                                                            <option value="{{ $season->id }}">{{ $season->name }}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="area" class="form-label">Area ( In hectares )</label>
