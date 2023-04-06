@@ -36,6 +36,8 @@ Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
     Route::view('/dashboard', 'farmer.dashboard');
     Route::get('/crops', [CropController::class, 'index'])->name('crops.index');
     Route::post('/crops', [CropController::class, 'store'])->name('crops.store');
+    Route::get('/water', [WaterController::class, 'index'])->name('water.index');
+    Route::post('/water', [WaterController::class, 'store'])->name('water.store');
 });
 
 // ADMIN PROTECTED ROUTES
