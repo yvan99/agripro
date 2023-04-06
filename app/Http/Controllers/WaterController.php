@@ -42,8 +42,7 @@ class WaterController extends Controller
         $water->irrigation_type = $validated['irrigation_type'];
         $water->irrigation_frequency = $validated['irrigation_frequency'];
         $water->cost = $validated['cost'];
-        $water->timestamp = now();
-        $water->farmer_id = auth()->user()->farmer->id;
+        $water->farmer_id = $request->farmer_id;
         $water->season_id = $validated['season_id'];
         $water->crop_id = $validated['crop_id'];
         $water->save();

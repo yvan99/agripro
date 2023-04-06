@@ -75,6 +75,12 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
+
+                                                <div class="mb-3 d-none">
+                                                    <label for="farmer_id" class="form-label">Farmer ID</label>
+                                                    <input type="text" class="form-control" id="farmer_id"
+                                                        name="farmer_id" value="{{ auth()->guard('farmer')->user()->id }}" >
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="crop" class="form-label">Crop</label>
                                                     <select name="crop_id" id="crop" class="form-select" required>
