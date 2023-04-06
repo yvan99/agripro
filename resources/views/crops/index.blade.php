@@ -26,7 +26,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Crop Type</th>
-                                        <th>Farmer</th>
+                                        {{-- <th>Farmer</th> --}}
                                         <th>Season</th>
                                         <th>Area</th>
                                         <th>Planting Date</th>
@@ -41,8 +41,8 @@
                                         <tr>
                                             <th scope="row">{{ $crop->id }}</th>
                                             <td>{{ $crop->crop_type }}</td>
-                                            <td>{{ $crop->farmer->name }}</td>
-                                            <td>{{ $crop->season->name }}</td>
+                                            {{-- <td>{{ $crop->farmer->name }}</td> --}}
+                                            <td> <span class="badge bg-success">{{ $crop->season->name }}</span> </td>
                                             <td>{{ $crop->area }}</td>
                                             <td>{{ $crop->planting_date }}</td>
                                             <td>{{ $crop->seed_type }}</td>
