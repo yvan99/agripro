@@ -15,10 +15,11 @@
                             <h4 class="card-title">Crops List</h4>
 
                         </div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEnergyModal">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#addEnergyModal">
                             Declare Energy Usage
-                          </button>
-                          
+                        </button>
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive border rounded">
@@ -80,6 +81,13 @@
                                                     <label for="energy_type" class="form-label">Energy Type</label>
                                                     <input type="text" class="form-control" id="energy_type"
                                                         name="energy_type">
+                                                </div>
+
+                                                <div class="mb-3 d-none">
+                                                    <label for="farmer_id" class="form-label">Farmer ID</label>
+                                                    <input type="text" class="form-control" id="farmer_id"
+                                                        name="farmer_id"
+                                                        value="{{ auth()->guard('farmer')->user()->id }}">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="cost" class="form-label">Cost</label>
