@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\CropController;
+use App\Http\Controllers\EnergyController;
 use App\Http\Controllers\FarmerAuthController;
 use App\Http\Controllers\SeasonController;
 use App\Http\Controllers\WaterController;
@@ -39,6 +40,8 @@ Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
     Route::post('/crops', [CropController::class, 'store'])->name('crops.store');
     Route::get('/water', [WaterController::class, 'index'])->name('water.index');
     Route::post('/water', [WaterController::class, 'store'])->name('water.store');
+    Route::get('/energy', [EnergyController::class, 'index'])->name('energy.index');
+    Route::post('/energy', [EnergyController::class, 'store'])->name('energy.store');
 });
 
 // ADMIN PROTECTED ROUTES
