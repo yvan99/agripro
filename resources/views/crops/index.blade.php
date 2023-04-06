@@ -16,7 +16,7 @@
 
                         </div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCropModal">
-                            Add Crop
+                           Declare Crop Usage
                           </button>
                     </div>
                     <div class="card-body">
@@ -58,27 +58,27 @@
                             <!-- Modal -->
                             <div class="modal fade" id="addCropModal" tabindex="-1" aria-labelledby="addCropModalLabel"
                                 aria-hidden="true">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="addCropModalLabel">Add Crop</h5>
+                                            <h5 class="modal-title" id="addCropModalLabel">Declare Crop Usage</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="{{ route('crops.store') }}">
+                                            <form method="POST" class="row" action="{{ route('crops.store') }}">
                                                 @csrf
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="crop_type" class="form-label">Crop Type</label>
                                                     <input type="text" class="form-control" id="crop_type"
                                                         name="crop_type" required>
                                                 </div>
-                                                <div class="mb-3 d-none">
+                                                <div class="mb-3 col-6 d-none">
                                                     <label for="farmer_id" class="form-label">Farmer ID</label>
                                                     <input type="text" class="form-control" id="farmer_id"
                                                         name="farmer_id" value="{{ auth()->guard('farmer')->user()->id }}" >
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="season_id" class="form-label">Season ID</label>
                                                     <select class="form-control form-select" id="season_id" name="season_id">
                                                         @foreach($seasons as $season)
@@ -86,39 +86,42 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="area" class="form-label">Area ( In hectares )</label>
                                                     <input type="number" class="form-control" id="area"
                                                         name="area" required>
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="planting_date" class="form-label">Planting Date</label>
                                                     <input type="date" class="form-control" id="planting_date"
                                                         name="planting_date" required>
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="seed_type" class="form-label">Seed Type</label>
                                                     <input type="text" class="form-control" id="seed_type"
                                                         name="seed_type" required>
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="fertilizer_amount" class="form-label">Fertilizer
                                                         Amount</label>
                                                     <input type="number" class="form-control" id="fertilizer_amount"
                                                         name="fertilizer_amount" required>
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="pesticide_type" class="form-label">Pesticide
                                                         Type</label>
                                                     <input type="text" class="form-control" id="pesticide_type"
                                                         name="pesticide_type" required>
                                                 </div>
-                                                <div class="mb-3">
+                                                <div class="mb-3 col-6">
                                                     <label for="yield" class="form-label">Yield Obtained</label>
                                                     <input type="number" class="form-control" id="yield"
                                                         name="yield" required>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <div class="mb-3 col-4">
+                                                    <button type="submit" class="btn btn-primary">Save Data</button>
+                                                </div>
+                                                
                                             </form>
                                         </div>
                                     </div>
