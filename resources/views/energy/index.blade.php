@@ -45,42 +45,31 @@
                                 </tbody>
                             </table>
 
-                            <!-- Modal -->
-                            <!-- Modal -->
-                            <div class="modal fade" id="addWaterModal" tabindex="-1"
-                                aria-labelledby="addWaterModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
+                            <!-- Modal for adding energy -->
+                            <div class="modal fade" id="addEnergyModal" tabindex="-1"
+                                aria-labelledby="addEnergyModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="addWaterModalLabel">Register Water Usage</h5>
+                                            <h5 class="modal-title" id="addEnergyModalLabel">Add Energy</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            <form action="{{ route('water.store') }}" method="POST">
-                                                @csrf
+                                        <form method="POST" action="{{ route('energy.store') }}">
+                                            @csrf
+                                            <div class="modal-body">
                                                 <div class="mb-3">
-                                                    <label for="season" class="form-label">Season</label>
-                                                    <select name="season_id" id="season" class="form-select"
-                                                        required>
-                                                        <option value="">Select Season</option>
+                                                    <label for="season_id" class="form-label">Season</label>
+                                                    <select class="form-select" id="season_id" name="season_id">
                                                         @foreach ($seasons as $season)
                                                             <option value="{{ $season->id }}">{{ $season->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
-
-                                                <div class="mb-3 d-none">
-                                                    <label for="farmer_id" class="form-label">Farmer ID</label>
-                                                    <input type="text" class="form-control" id="farmer_id"
-                                                        name="farmer_id"
-                                                        value="{{ auth()->guard('farmer')->user()->id }}">
-                                                </div>
                                                 <div class="mb-3">
-                                                    <label for="crop" class="form-label">Crop</label>
-                                                    <select name="crop_id" id="crop" class="form-select" required>
-                                                        <option value="">Select Crop</option>
+                                                    <label for="crop_id" class="form-label">Crop</label>
+                                                    <select class="form-select" id="crop_id" name="crop_id">
                                                         @foreach ($crops as $crop)
                                                             <option value="{{ $crop->id }}">{{ $crop->crop_type }}
                                                             </option>
@@ -88,33 +77,26 @@
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="amount" class="form-label">Amount</label>
-                                                    <input type="number" name="amount" id="amount"
-                                                        class="form-control" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="irrigation_type" class="form-label">Irrigation
-                                                        Type</label>
-                                                    <input type="text" name="irrigation_type" id="irrigation_type"
-                                                        class="form-control" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="irrigation_frequency" class="form-label">Irrigation
-                                                        Frequency</label>
-                                                    <input type="text" name="irrigation_frequency"
-                                                        id="irrigation_frequency" class="form-control" required>
+                                                    <label for="energy_type" class="form-label">Energy Type</label>
+                                                    <input type="text" class="form-control" id="energy_type"
+                                                        name="energy_type">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="cost" class="form-label">Cost</label>
-                                                    <input type="number" name="cost" id="cost"
-                                                        class="form-control" required>
+                                                    <input type="number" class="form-control" id="cost"
+                                                        name="cost">
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Save Data</button>
-                                            </form>
-                                        </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-primary">Add Energy</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
