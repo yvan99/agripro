@@ -11,8 +11,8 @@ class EnergyController extends Controller
 {
     public function index()
     {
-        $energies = Energy::with(['crop', 'season'])->get();
-        $crops = Crop::all();
+        $energies = Energy::with(['crop', 'season'])->where('farmer_id', auth()->user()->id)->get();
+        $crops = Crop::where('farmer_id', auth()->user()->id)->get();
         $seasons = Season::all();
 
         return view('energy.index', compact('energies', 'crops', 'seasons'));
