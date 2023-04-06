@@ -51,7 +51,7 @@
                             <!-- Modal for adding energy -->
                             <div class="modal fade" id="addEnergyModal" tabindex="-1"
                                 aria-labelledby="addEnergyModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
+                                <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="addEnergyModalLabel">Declare energy usage</h5>
