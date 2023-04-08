@@ -21,7 +21,10 @@ class EnergyController extends Controller
     public function energyAdmin()
     {
         $energies = Energy::with(['crop', 'season'])->get();
-        return view('energy.admin', compact('energies'));
+        $energyChart =response()->json([
+            'data' => $energies,
+        ]);
+        return view('energy.admin', compact('energies','energyChart'));
     }
 
     public function store(Request $request)
@@ -43,6 +46,6 @@ class EnergyController extends Controller
         $energy->amount = $request->amount;
         $energy->save();
 
-        return redirect()->route('energy.index');
+        return redirect()->back();
     }
 }
