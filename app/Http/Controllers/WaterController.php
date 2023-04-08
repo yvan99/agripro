@@ -23,10 +23,9 @@ class WaterController extends Controller
     }
     public function waterAdmin()
     {
-        $waters = Water::where('farmer_id', auth()->user()->id)->get();
-        $seasons = Season::where('farmer_id', auth()->user()->id)->get();
+        $waters = Water::all();
         $crops = Crop::all();
-        return view('water.index', compact('waters', 'seasons','crops'));
+        return view('water.index', compact('waters','crops'));
     }
 
     /**
