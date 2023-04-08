@@ -6,7 +6,7 @@
         "storeKey": "quisetting-html",
         "setting": {
             "app_name": {
-                "value": "Qompac UI"
+                "value": "Dashboard"
             },
             "theme_scheme_direction": {
                 "value": "ltr"

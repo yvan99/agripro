@@ -118,67 +118,7 @@
                 </div>
             </div>
         </div>
-        <!--=== Counter Area ===-->
-        <div class="counter-area">
-            <div class="row pt-70">
-                <div class="col-lg-3 col-sm-6">
-                    <!--=== Counter Item ===-->
-                    <div class="single-counter-item-two mb-30 wow fadeInDown">
-                        <div class="inner-counter">
-                            <div class="icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <h2 class="number"><span class="count">859</span></h2>
-                            <p>Projects Complete</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <!--=== Counter Item ===-->
-                    <div class="single-counter-item-two mb-30 wow fadeInUp">
-                        <div class="inner-counter">
-                            <div class="icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <h2 class="number"><span class="count">99</span>%</h2>
-                            <p>Satisfactions Rate</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <!--=== Counter Item ===-->
-                    <div class="single-counter-item-two mb-30 wow fadeInDown">
-                        <div class="inner-counter">
-                            <div class="icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <h2 class="number"><span class="count">683</span>+</h2>
-                            <p>Expert Team Member</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <!--=== Counter Item ===-->
-                    <div class="single-counter-item-two mb-30 wow fadeInUp">
-                        <div class="inner-counter">
-                            <div class="icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <h2 class="number"><span class="count">860</span>+</h2>
-                            <p>Awards Winning</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--=== Experience Box ===-->
-    <div class="experience-box-two wow fadeInRight">
-        <h2 class="number"><span class="count">25</span></h2>
-        <h6>Years Of
-            Experience</h6>
-        <a href="about.html" class="icon-btn"><i class="far fa-arrow-right"></i></a>
-    </div>
+
 </section>
 <!--====== End Features Section ======-->
 @include('components.homefooter')

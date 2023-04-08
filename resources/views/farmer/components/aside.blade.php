@@ -4,7 +4,7 @@
         <a href="/farmer/dashboard" class="navbar-brand">
 
             <!--Logo start-->
-            <div class="logo-main">
+            {{-- <div class="logo-main">
                 <div class="logo-normal">
                     <svg class=" icon-30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -21,7 +21,7 @@
                         <path d="M23.751 30L13.2266 15.2103H21.4755L31.9999 30H23.751Z" fill="#3FF0B9" />
                     </svg>
                 </div>
-            </div>
+            </div> --}}
             <!--logo End-->
             <h4 class="logo-title" data-setting="app_name">{{ env('APP_NAME') }}</h4>
         </a>
