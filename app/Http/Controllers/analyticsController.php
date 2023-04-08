@@ -88,13 +88,7 @@ class analyticsController extends Controller
 
     public function farmerData()
     {
-        $farmerId = Auth::user()->farmer->id;
-
-        // Total seasons for the logged in farmer
-        $totalSeasons = Farmer::find($farmerId)->seasons->count();
-
-        // Total farmers
-        $totalFarmers = Farmer::count();
+        $farmerId = Auth::user()->id;
 
         // Total area, fertilizer, and yield for the logged in farmer's crops
         $crops = Crop::where('farmer_id', $farmerId)->get();
@@ -124,8 +118,6 @@ class analyticsController extends Controller
         $totalNetProfit = $finances->sum('net_profit');
 
         return view('farmer.dashboard', compact(
-            'totalSeasons',
-            'totalFarmers',
             'totalArea',
             'totalFertilizer',
             'totalYield',
