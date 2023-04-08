@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\analyticsController;
 use App\Http\Controllers\chartController;
 use App\Http\Controllers\CropController;
 use App\Http\Controllers\EnergyController;
@@ -37,7 +38,7 @@ Route::prefix('farmer')->group(function () {
 
 // FARMER PROTECTED ROUTES
 Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
-    Route::view('/dashboard', 'farmer.dashboard');
+    Route::get('/dashboard', [analyticsController::class, 'farmerData']);
     Route::get('/crops', [CropController::class, 'index'])->name('crops.index');
     Route::post('/crops', [CropController::class, 'store'])->name('crops.store');
     Route::get('/water', [WaterController::class, 'index'])->name('water.index');
@@ -50,7 +51,7 @@ Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
 
 // ADMIN PROTECTED ROUTES
 Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
-    Route::view('/dashboard', 'admin.dashboard');
+    Route::get('/dashboard', [analyticsController::class, 'index']);
     Route::post('/seasons', [SeasonController::class, 'store']);
     Route::get('/seasons', [SeasonController::class, 'index']);
     Route::get('/crops', [CropController::class, 'cropAdmin'])->name('crops.index');

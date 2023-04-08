@@ -24,7 +24,7 @@ class analyticsController extends Controller
         $totalArea = Crop::sum('area');
 
         // Total fertilizer cost of all crops
-        $totalFertilizerCost = Crop::sum('fertilizer_cost');
+        $totalFertilizerCost = Crop::sum('fertilizer_amount');
 
         // Total yield of all crops
         $totalYield = Crop::sum('yield');
@@ -99,7 +99,7 @@ class analyticsController extends Controller
         // Total area, fertilizer, and yield for the logged in farmer's crops
         $crops = Crop::where('farmer_id', $farmerId)->get();
         $totalArea = $crops->sum('area');
-        $totalFertilizer = $crops->sum('fertilizer');
+        $totalFertilizer = $crops->sum('fertilizer_amount');
         $totalYield = $crops->sum('yield');
 
         // Total amount and cost for the logged in farmer's water usage
