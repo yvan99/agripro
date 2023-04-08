@@ -16,6 +16,13 @@ class CropController extends Controller
         return view('crops.index', compact('crops','seasons'));
     }
 
+    public function cropAdmin()
+    {
+        $crops = Crop::with('farmer', 'season')->get();
+        $seasons = Season::all();
+        return view('crops.admin', compact('crops','seasons'));
+    }
+
     public function store(Request $request)
     {
         // convert date to valid format
