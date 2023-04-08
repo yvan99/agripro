@@ -7,7 +7,7 @@
                 <div class="col-lg-6">
                     <!--====== Top Left ======-->
                     <div class="top-left">
-                        <span>Welcome to Gadden a modern Gardening & Landscape Contact Us</span>
+                        <span>Welcome to {{env("APP_NAME")}}</span>
                     </div>
                 </div>
                 <div class="col-lg-6">
