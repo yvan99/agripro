@@ -52,6 +52,6 @@ class WaterController extends Controller
         $water->season_id = $validated['season_id'];
         $water->crop_id = $validated['crop_id'];
         $water->save();
-        return redirect()->route('water.index')->with('success', 'Water added successfully');
+        return redirect()->back()->with('success', 'Water added successfully');
     }
 }

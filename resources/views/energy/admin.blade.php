@@ -91,10 +91,17 @@ console.log(energyData)
     // Extract labels and datasets for the bar chart
     let barLabels = energyData.original.data.map(data => data.season.name);
     let barDatasets = [{
-        label: 'Electricity Consumption',
+        label: 'Electricity',
         data: energyData.original.data.map(data => data.amount),
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
         borderColor: 'rgb(54, 162, 235)',
+        borderWidth: 1
+    },
+    {
+        label: 'Cost',
+        data: energyData.original.data.map(data => data.cost),
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
         borderWidth: 1
     }];
 
