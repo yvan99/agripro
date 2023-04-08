@@ -14,10 +14,10 @@
                     <!--====== Top Right ======-->
                     <div class="top-right float-lg-right">
                         <ul class="social-link">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="/admin/login" class="btn btn-sm btn-warning">Admin Area</a></li>
+                            {{-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                         <p class="wow fadeInDown" data-wow-delay=".6s">We Provide Beautiful Gardening & Landscaping
                         </p>
                         <div class="hero-button mb-30 wow fadeInUp" data-wow-delay=".7s">
-                            <a href="/farmer/register" class="main-btn golden-btn mb-10">Farmer Account</a>
-                            <a href="index.html" class="main-btn filled-btn mb-10">How It Work</a>
+                            <a href="/farmer/register" class="main-btn golden-btn mb-10">Farmer SignUp</a>
+                            <a href="/farmer/login" class="main-btn filled-btn mb-10">Farmer Login</a>
                         </div>
                     </div>
                 </div>
