@@ -50,8 +50,6 @@ Route::prefix('farmer')->middleware(['auth:farmer'])->group(function () {
 // ADMIN PROTECTED ROUTES
 Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::view('/dashboard', 'admin.dashboard');
-
-    // SEASONS
     Route::post('/seasons', [SeasonController::class, 'store']);
     Route::get('/seasons', [SeasonController::class, 'index']);
     Route::get('/crops', [CropController::class, 'cropAdmin'])->name('crops.index');
