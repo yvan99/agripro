@@ -25,7 +25,7 @@ class WaterController extends Controller
     {
         $waters = Water::all();
         $crops = Crop::all();
-        return view('water.index', compact('waters','crops'));
+        return view('water.admin', compact('waters','crops'));
     }
 
     /**
