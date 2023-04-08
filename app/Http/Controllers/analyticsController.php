@@ -8,7 +8,6 @@ use App\Models\Farmer;
 use App\Models\Finance;
 use App\Models\Season;
 use App\Models\Water;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class analyticsController extends Controller
@@ -124,7 +123,7 @@ class analyticsController extends Controller
         $totalIrrigationCost = $finances->sum('irrigation_cost');
         $totalNetProfit = $finances->sum('net_profit');
 
-        return view('total.index', compact(
+        return view('farmer.dashboard', compact(
             'totalSeasons',
             'totalFarmers',
             'totalArea',
