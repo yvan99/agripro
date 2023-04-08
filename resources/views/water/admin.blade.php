@@ -23,6 +23,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Energy Usage Analysis</h4>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="water-crop-pie-chart"></canvas>
+                    </div>
+                </div>
+            </div>
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
@@ -120,7 +134,7 @@
 
     // Extract labels and datasets for the pie chart
     let pieLabels = [...new Set(waterData.original.data.map(data => data.crop
-    .crop_type))]; // Use a set to get unique crop types
+        .crop_type))]; // Use a set to get unique crop types
     let pieData = pieLabels.map(label => {
         let amount = waterData.original.data.filter(data => data.crop.crop_type === label).reduce((acc, curr) =>
             acc + curr.amount,
