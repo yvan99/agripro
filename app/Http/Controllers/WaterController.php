@@ -19,13 +19,37 @@ class WaterController extends Controller
         $waters = Water::where('farmer_id', auth()->user()->id)->get();
         $seasons = Season::all();
         $crops = Crop::where('farmer_id', auth()->user()->id)->get();
-        return view('water.index', compact('waters', 'seasons','crops'));
+        return view('water.index', compact('waters', 'seasons', 'crops'));
     }
     public function waterAdmin()
     {
         $waters = Water::all();
         $crops = Crop::all();
-        return view('water.admin', compact('waters','crops'));
+
+        $waterData = Water::join('seasons', 'waters.season_id', '=', 'seasons.id')
+            ->join('crops', 'waters.crop_id', '=', 'crops.id')
+            ->select('seasons.name as season_name', 'waters.amount', 'waters.irrigation_frequency', 'crops.name as crop_name', 'waters.cost')
+            ->get();
+        $seasons = $waterData->pluck('season_name')->unique();
+        $crops = $waterData->pluck('crop_name')->unique();
+        $waterJson = [];
+
+        foreach ($seasons as $season) {
+            $amount = $waterData->where('season_name', $season)->sum('amount');
+            $frequency = $waterData->where('season_name', $season)->average('irrigation_frequency');
+            $cost = $waterData->where('season_name', $season)->sum('cost');
+            $waterJson['bar'][] = ['season_name' => $season, 'amount' => $amount, 'frequency' => $frequency, 'cost' => $cost];
+            $waterJson['pie'][] = ['label' => $season, 'value' => $cost];
+        }
+
+        foreach ($crops as $crop) {
+            $amount = $waterData->where('crop_name', $crop)->sum('amount');
+            $frequency = $waterData->where('crop_name', $crop)->average('irrigation_frequency');
+            $cost = $waterData->where('crop_name', $crop)->sum('cost');
+            $waterJson['crop_bar'][] = ['crop_name' => $crop, 'amount' => $amount, 'frequency' => $frequency, 'cost' => $cost];
+            $waterJson['crop_pie'][] = ['label' => $crop, 'value' => $cost];
+        }
+        return view('water.admin', compact('waters', 'crops','waterJson'));
     }
 
     /**
