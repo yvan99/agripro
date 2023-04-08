@@ -18,6 +18,12 @@ class EnergyController extends Controller
         return view('energy.index', compact('energies', 'crops', 'seasons'));
     }
 
+    public function energyAdmin()
+    {
+        $energies = Energy::with(['crop', 'season'])->get();
+        return view('energy.admin', compact('energies'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
