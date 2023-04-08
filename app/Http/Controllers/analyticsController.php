@@ -9,6 +9,7 @@ use App\Models\Finance;
 use App\Models\Season;
 use App\Models\Water;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class analyticsController extends Controller
 {
@@ -84,5 +85,63 @@ class analyticsController extends Controller
             'totalIrrigationCost' => $totalIrrigationCost,
             'totalNetProfit' => $totalNetProfit,
         ]);
+    }
+
+    public function farmerData()
+    {
+        $farmerId = Auth::user()->farmer->id;
+
+        // Total seasons for the logged in farmer
+        $totalSeasons = Farmer::find($farmerId)->seasons->count();
+
+        // Total farmers
+        $totalFarmers = Farmer::count();
+
+        // Total area, fertilizer, and yield for the logged in farmer's crops
+        $crops = Crop::where('farmer_id', $farmerId)->get();
+        $totalArea = $crops->sum('area');
+        $totalFertilizer = $crops->sum('fertilizer');
+        $totalYield = $crops->sum('yield');
+
+        // Total amount and cost for the logged in farmer's water usage
+        $waters = Water::where('farmer_id', $farmerId)->get();
+        $totalWaterAmount = $waters->sum('amount');
+        $totalWaterCost = $waters->sum('cost');
+
+        // Total amount and cost for the logged in farmer's energy usage
+        $energies = Energy::where('farmer_id', $farmerId)->get();
+        $totalEnergyAmount = $energies->sum('amount');
+        $totalEnergyCost = $energies->sum('cost');
+
+        // Total production cost, income, gross margin, labor cost, fertilizer cost, pesticide cost, and irrigation cost for the logged in farmer's crops
+        $finances = Finance::where('farmer_id', $farmerId)->get();
+        $totalProductionCost = $finances->sum('production_cost');
+        $totalIncome = $finances->sum('income');
+        $totalGrossMargin = $finances->sum('gross_margin');
+        $totalLaborCost = $finances->sum('labor_cost');
+        $totalFertilizerCost = $finances->sum('fertilizer_cost');
+        $totalPesticideCost = $finances->sum('pesticide_cost');
+        $totalIrrigationCost = $finances->sum('irrigation_cost');
+        $totalNetProfit = $finances->sum('net_profit');
+
+        return view('total.index', compact(
+            'totalSeasons',
+            'totalFarmers',
+            'totalArea',
+            'totalFertilizer',
+            'totalYield',
+            'totalWaterAmount',
+            'totalWaterCost',
+            'totalEnergyAmount',
+            'totalEnergyCost',
+            'totalProductionCost',
+            'totalIncome',
+            'totalGrossMargin',
+            'totalLaborCost',
+            'totalFertilizerCost',
+            'totalPesticideCost',
+            'totalIrrigationCost',
+            'totalNetProfit'
+        ));
     }
 }
