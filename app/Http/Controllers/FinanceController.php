@@ -15,6 +15,13 @@ class FinanceController extends Controller
         return view('finance.index', compact('finances', 'seasons'));
     }
 
+    public function financeAdmin()
+    {
+        $finances = Finance::with('season')->get();
+        $seasons = Season::all();
+        return view('finance.admin', compact('finances', 'seasons'));
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
