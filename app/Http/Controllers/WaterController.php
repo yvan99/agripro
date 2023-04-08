@@ -26,9 +26,9 @@ class WaterController extends Controller
         $waters = Water::all();
         $crops = Crop::all();
 
-        $waterData = Water::join('seasons', 'waters.season_id', '=', 'seasons.id')
-            ->join('crops', 'waters.crop_id', '=', 'crops.id')
-            ->select('seasons.name as season_name', 'waters.amount', 'waters.irrigation_frequency', 'crops.name as crop_name', 'waters.cost')
+        $waterData = Water::join('seasons', 'water.season_id', '=', 'seasons.id')
+            ->join('crops', 'water.crop_id', '=', 'crops.id')
+            ->select('seasons.name as season_name', 'water.amount', 'water.irrigation_frequency', 'crops.crop_type as crop_name', 'water.cost')
             ->get();
         $seasons = $waterData->pluck('season_name')->unique();
         $crops = $waterData->pluck('crop_name')->unique();
