@@ -54,4 +54,9 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     // SEASONS
     Route::post('/seasons', [SeasonController::class, 'store']);
     Route::get('/seasons', [SeasonController::class, 'index']);
+    Route::get('/crops', [CropController::class, 'cropAdmin'])->name('crops.index');
+    Route::get('/water', [WaterController::class, 'waterAdmin'])->name('water.index');
+    Route::get('/energy', [EnergyController::class, 'energyAdmin'])->name('energy.index');
+    Route::get('/finance', [FinanceController::class,'financeAdmin'])->name('finance.index');
+    
 });
