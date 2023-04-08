@@ -9,11 +9,13 @@ class chartController extends Controller
 {
     public function financeChartData()
     {
-        $data = DB::table('finance')
-            ->join('season', 'finance.season_id', '=', 'season.id')
-            ->select('season.name', 'finance.production_cost', 'finance.income', 'finance.gross_margin', 'finance.labor_cost', 'finance.fertilizer_cost', 'finance.pesticide_cost', 'finance.irrigation_cost', 'finance.net_profit')
+        $financeData = DB::table('finance')
+            ->join('seasons', 'finance.season_id', '=', 'seasons.id')
+            ->select('seasons.name', 'finance.production_cost', 'finance.income', 'finance.gross_margin', 'finance.labor_cost', 'finance.fertilizer_cost', 'finance.pesticide_cost', 'finance.irrigation_cost', 'finance.net_profit')
             ->get();
 
-        return response()->json($data);
+        $financeJson =response()->json($financeData);
+
+        return view('finance.admin', compact('financeJson'));
     }
 }

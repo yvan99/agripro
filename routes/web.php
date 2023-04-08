@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\chartController;
 use App\Http\Controllers\CropController;
 use App\Http\Controllers\EnergyController;
 use App\Http\Controllers\FarmerAuthController;
@@ -56,5 +57,6 @@ Route::prefix('admin')->middleware(['auth:admin'])->group(function () {
     Route::get('/water', [WaterController::class, 'waterAdmin'])->name('water.index');
     Route::get('/energy', [EnergyController::class, 'energyAdmin'])->name('energy.index');
     Route::get('/finance', [FinanceController::class,'financeAdmin'])->name('finance.index');
+
     
 });

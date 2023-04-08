@@ -1,4 +1,5 @@
- <!-- Library Bundle Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Library Bundle Script -->
  <script src="{{ asset('dashboard/js/core/libs.min.js') }}"></script>
  <!-- Plugin Scripts -->
  <!-- Slider-tab Script -->
