@@ -25,30 +25,10 @@ class WaterController extends Controller
     {
         $waters = Water::all();
         $crops = Crop::all();
-
-        $waterData = Water::join('seasons', 'water.season_id', '=', 'seasons.id')
-            ->join('crops', 'water.crop_id', '=', 'crops.id')
-            ->select('seasons.name as season_name', 'water.amount', 'water.irrigation_frequency', 'crops.crop_type as crop_name', 'water.cost')
-            ->get();
-        $seasons = $waterData->pluck('season_name')->unique();
-        $crops = $waterData->pluck('crop_name')->unique();
-        $waterJson = [];
-
-        foreach ($seasons as $season) {
-            $amount = $waterData->where('season_name', $season)->sum('amount');
-            $frequency = $waterData->where('season_name', $season)->average('irrigation_frequency');
-            $cost = $waterData->where('season_name', $season)->sum('cost');
-            $waterJson['bar'][] = ['season_name' => $season, 'amount' => $amount, 'frequency' => $frequency, 'cost' => $cost];
-            $waterJson['pie'][] = ['label' => $season, 'value' => $cost];
-        }
-
-        foreach ($crops as $crop) {
-            $amount = $waterData->where('crop_name', $crop)->sum('amount');
-            $frequency = $waterData->where('crop_name', $crop)->average('irrigation_frequency');
-            $cost = $waterData->where('crop_name', $crop)->sum('cost');
-            $waterJson['crop_bar'][] = ['crop_name' => $crop, 'amount' => $amount, 'frequency' => $frequency, 'cost' => $cost];
-            $waterJson['crop_pie'][] = ['label' => $crop, 'value' => $cost];
-        }
+        $waterData = Water::with(['crop', 'season'])->get();
+        $waterJson =response()->json([
+            'data' => $waterData,
+        ]);
         return view('water.admin', compact('waters', 'crops','waterJson'));
     }
 

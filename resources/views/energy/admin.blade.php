@@ -87,7 +87,6 @@
 <script>
     // Retrieve energy data from backend
     let energyData = @json($energyChart);
-console.log(energyData)
     // Extract labels and datasets for the bar chart
     let barLabels = energyData.original.data.map(data => data.season.name);
     let barDatasets = [{
