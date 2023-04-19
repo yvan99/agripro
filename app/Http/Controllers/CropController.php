@@ -62,6 +62,6 @@ class CropController extends Controller
         $crop->pesticide_type = $request->pesticide_type;
         $crop->yield = $request->yield;
         $crop->save();
-        return redirect()->route('crops.index')->with('success', 'Crop added successfully!');
+        return redirect()->back()->with('success', 'Crop added successfully!');
     }
 }
