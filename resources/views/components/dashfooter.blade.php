@@ -6,8 +6,7 @@
                 <li class="list-inline-item"><a href="javascript:void(0);">Terms of Use</a></li>
             </ul>
             <div class="right-panel">
-                ©  {{ date('Y') }}
-             Developed By <span data-setting="app_name">{{ env('PROJECT_OWNER') }}</span>
+            <P>Copy &copy; {{ date('Y') }} {{ env('PROJECT_OWNER') }}. All Rights Reserved.</P>
             </div>
         </div>
     </footer>

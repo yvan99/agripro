@@ -70,7 +70,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin/seasons') ? 'active' : '' }}" aria-current="page" href="/admin/seasons">
-                        <i class="icon" data-bs-toggle="tooltip" title="Analytics" data-bs-placement="right">
+                        <i class="icon" data-bs-toggle="tooltip" title="seasons" data-bs-placement="right">
                             <svg width="20" height="20" class="icon-20" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -87,7 +87,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin/crops') ? 'active' : '' }}" aria-current="page"
                         href="/admin/crops">
-                        <i class="icon" data-bs-toggle="tooltip" title="Analytics" data-bs-placement="right">
+                        <i class="icon" data-bs-toggle="tooltip" title="Crops" data-bs-placement="right">
                             <svg width="20" height="20" class="icon-20" viewBox="0 0 16 16" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -103,7 +103,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin/water') ? 'active' : '' }}" aria-current="page"
                         href="/admin/water">
-                        <i class="icon" data-bs-toggle="tooltip" title="UI Elements" data-bs-placement="right">
+                        <i class="icon" data-bs-toggle="tooltip" title="Water Usage" data-bs-placement="right">
                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M13.7505 9.70303V7.68318C13.354 7.68318 13.0251 7.36377 13.0251 6.97859V4.57356C13.0251 4.2532 12.764 4.00049 12.4352 4.00049H5.7911C3.70213 4.00049 2 5.653 2 7.68318V10.1155C2 10.3043 2.07737 10.4828 2.21277 10.6143C2.34816 10.7449 2.53191 10.8201 2.72534 10.8201C3.46035 10.8201 4.02128 11.3274 4.02128 11.9944C4.02128 12.6905 3.45068 13.2448 2.73501 13.2533C2.33849 13.2533 2 13.5257 2 13.9203V16.3262C2 18.3555 3.70213 19.9995 5.78143 19.9995H12.4352C12.764 19.9995 13.0251 19.745 13.0251 19.4265V17.3963C13.0251 17.0027 13.354 16.6917 13.7505 16.6917V14.8701C13.354 14.8701 13.0251 14.5497 13.0251 14.1655V10.4076C13.0251 10.0224 13.354 9.70303 13.7505 9.70303Z" fill="currentColor"></path>
                                 <path d="M19.9787 11.9948C19.9787 12.69 20.559 13.2443 21.265 13.2537C21.6615 13.2537 22 13.5262 22 13.9113V16.3258C22 18.3559 20.3075 20 18.2186 20H15.0658C14.7466 20 14.4758 19.7454 14.4758 19.426V17.3967C14.4758 17.0022 14.1567 16.6921 13.7505 16.6921V14.8705C14.1567 14.8705 14.4758 14.5502 14.4758 14.1659V10.4081C14.4758 10.022 14.1567 9.70348 13.7505 9.70348V7.6827C14.1567 7.6827 14.4758 7.36328 14.4758 6.9781V4.57401C14.4758 4.25366 14.7466 4 15.0658 4H18.2186C20.3075 4 22 5.64406 22 7.6733V10.0407C22 10.2286 21.9226 10.4081 21.7872 10.5387C21.6518 10.6702 21.4681 10.7453 21.2747 10.7453C20.559 10.7453 19.9787 11.31 19.9787 11.9948Z" fill="currentColor"></path>
@@ -116,7 +116,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin/energy') ? 'active' : '' }}" aria-current="page"
                         href="/admin/energy">
-                        <i class="icon" data-bs-toggle="tooltip" title="Utilities" data-bs-placement="right">
+                        <i class="icon" data-bs-toggle="tooltip" title="energy usage" data-bs-placement="right">
                             <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M11.9912 18.6215L5.49945 21.864C5.00921 22.1302 4.39768 21.9525 4.12348 21.4643C4.0434 21.3108 4.00106 21.1402 4 20.9668V13.7087C4 14.4283 4.40573 14.8725 5.47299 15.37L11.9912 18.6215Z" fill="currentColor"></path>
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.89526 2H15.0695C17.7773 2 19.9735 3.06605 20 5.79337V20.9668C19.9989 21.1374 19.9565 21.3051 19.8765 21.4554C19.7479 21.7007 19.5259 21.8827 19.2615 21.9598C18.997 22.0368 18.7128 22.0023 18.4741 21.8641L11.9912 18.6215L5.47299 15.3701C4.40573 14.8726 4 14.4284 4 13.7088V5.79337C4 3.06605 6.19625 2 8.89526 2ZM8.22492 9.62227H15.7486C16.1822 9.62227 16.5336 9.26828 16.5336 8.83162C16.5336 8.39495 16.1822 8.04096 15.7486 8.04096H8.22492C7.79137 8.04096 7.43991 8.39495 7.43991 8.83162C7.43991 9.26828 7.79137 9.62227 8.22492 9.62227Z" fill="currentColor"></path>
@@ -129,7 +129,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('admin/finance') ? 'active' : '' }}" aria-current="page"
                         href="/admin/finance">
-                        <i class="icon" data-bs-toggle="tooltip" title="Crypto" data-bs-placement="right">
+                        <i class="icon" data-bs-toggle="tooltip" title="finance" data-bs-placement="right">
                             <svg class="icon-20" width="20" height="20" viewBox="0 0 14 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4"
@@ -152,7 +152,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link " aria-current="page" href="/admin/logout">
-                        <i class="icon" data-bs-toggle="tooltip" title="Crypto" data-bs-placement="right">
+                        <i class="icon" data-bs-toggle="tooltip" title="logout" data-bs-placement="right">
                             <svg class="icon-20" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M2 6.447C2 3.996 4.03024 2 6.52453 2H11.4856C13.9748 2 16 3.99 16 6.437V17.553C16 20.005 13.9698 22 11.4744 22H6.51537C4.02515 22 2 20.01 2 17.563V16.623V6.447Z" fill="currentColor"></path>
                                 <path d="M21.7787 11.4548L18.9329 8.5458C18.6388 8.2458 18.1655 8.2458 17.8723 8.5478C17.5802 8.8498 17.5811 9.3368 17.8743 9.6368L19.4335 11.2298H17.9386H9.54826C9.13434 11.2298 8.79834 11.5748 8.79834 11.9998C8.79834 12.4258 9.13434 12.7698 9.54826 12.7698H19.4335L17.8743 14.3628C17.5811 14.6628 17.5802 15.1498 17.8723 15.4518C18.0194 15.6028 18.2113 15.6788 18.4041 15.6788C18.595 15.6788 18.7868 15.6028 18.9329 15.4538L21.7787 12.5458C21.9199 12.4008 21.9998 12.2048 21.9998 11.9998C21.9998 11.7958 21.9199 11.5998 21.7787 11.4548Z" fill="currentColor"></path>
